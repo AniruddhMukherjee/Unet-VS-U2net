@@ -14,6 +14,8 @@ U-Net has seen widespread adoption in medical imaging tasks, such as tumor segme
 In essence, U-Net stands as a testament to the power of architectural innovation in deep learning, addressing the intricate balance between global context and local details, and significantly advancing the field of image segmentation. Its legacy continues to influence the development of subsequent architectures, marking it as a pioneering model in the ever-evolving landscape of deep learning. 
 
 
+![unet](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/4f2e30e7-4e68-4b3c-a823-6a0f2e85f36b)
+
 # U2net
 
 U2-Net represents a significant evolution in deep learning architecture, specifically tailored for salient object detection. Building upon the foundation of U-Net, U2-Net introduces crucial modifications to enhance its performance in highlighting salient objects within complex visual scenes.
@@ -23,3 +25,9 @@ The 'Nested U-Structure' in U2-Net extends the traditional U-shaped architecture
 Adding a 'Recurrent U-Block' with recurrent neural network (RNN) units further augments U2-Net's capabilities. This addition allows the network to leverage temporal dependencies in the data, enhancing contextual understanding. The recurrent mechanism empowers the model to capture nuanced patterns over time, contributing to a comprehensive grasp of salient features.
 
 U2-Net's specialization in salient object detection distinguishes it from the broader applications of U-Net. These architectural refinements exemplify the iterative nature of advancements in deep learning, showcasing how tailored modifications address specific challenges, and furthering the capabilities of neural networks in the realm of computer vision. 🌐🤖
+
+![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/641a9b2b-4f74-49a1-a7a7-00378b7b178c)
+
+# Comparison
+
+
