@@ -13,8 +13,7 @@ U-Net has seen widespread adoption in medical imaging tasks, such as tumor segme
 
 In essence, U-Net stands as a testament to the power of architectural innovation in deep learning, addressing the intricate balance between global context and local details, and significantly advancing the field of image segmentation. Its legacy continues to influence the development of subsequent architectures, marking it as a pioneering model in the ever-evolving landscape of deep learning. 
 
-
-![unet](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/4f2e30e7-4e68-4b3c-a823-6a0f2e85f36b)
+![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/259653e3-42e5-4fdc-af03-6a435f618fad)
 
 # U2net
 
@@ -26,8 +25,14 @@ Adding a 'Recurrent U-Block' with recurrent neural network (RNN) units further a
 
 U2-Net's specialization in salient object detection distinguishes it from the broader applications of U-Net. These architectural refinements exemplify the iterative nature of advancements in deep learning, showcasing how tailored modifications address specific challenges, and furthering the capabilities of neural networks in the realm of computer vision. 🌐🤖
 
-![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/641a9b2b-4f74-49a1-a7a7-00378b7b178c)
+![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/2d9e4f3a-964c-4110-9a95-243db1f69029)
+
 
 # Comparison
 
+In a flood image segmentation project utilizing the FloodNet dataset, U2-Net outshone U-Net with compelling results. Focusing on aerial image segmentation for flood detection, U2-Net achieved an impressive 92% accuracy, surpassing U-Net's 86%. The 'Nested U-Structure' and 'Recurrent U-Block' in U2-Net played pivotal roles in capturing intricate details and contextual nuances, contributing to its superior performance. The refined architecture of U2-Net demonstrated its effectiveness in discerning flood patterns within the provided aerial images, showcasing its suitability for such complex tasks. This comparison underscores U2-Net's advancements in image segmentation, particularly in scenarios demanding high accuracy for disaster detection, where precise delineation of flooded areas is crucial. The 92% accuracy achieved by U2-Net emphasizes its efficacy in pushing the boundaries of aerial image segmentation for impactful real-world applications. 🌊📈
+
+![mail google](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/20ae9813-b819-40cb-9e3f-c1e49f6c297c)
+
+U2net : ![mail google](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/65e0ed0f-3657-4fb1-8929-ef3f2ee21f54)
 
