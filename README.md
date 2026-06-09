@@ -1,38 +1,113 @@
-# Improvement in image segmentation using Unet and U2net
+# Flood Area Segmentation: U-Net vs U2-Net
 
-# Unet
-The U-Net architecture, a groundbreaking advancement in the realm of image segmentation, has become a cornerstone in various fields such as medical image analysis, computer vision, and beyond. Developed by Olaf Ronneberger, Philipp Fischer, and Thomas Brox in 2015, U-Net derives its name from its distinctive U-shaped architecture.
+> **Published Research** — This project is peer-reviewed and published in Springer LNNS.  
+> 📄 [Read the Paper](https://link.springer.com/chapter/10.1007/978-981-97-8526-1_25)
 
-The uniqueness of U-Net lies in its ability to seamlessly fuse high-level context information with fine-grained spatial details. The encoder-decoder structure, resembling the letter U, comprises a contracting path to capture context and a symmetric expanding path for precise localization. This design is particularly effective for tasks like semantic segmentation, where pixel-level accuracy is crucial.
+## Overview
 
-The contracting path employs convolutional layers and pooling operations to progressively downsample the input, extracting high-level features. At the bottleneck, a dense feature representation is formed, capturing the global context. The expanding path then employs transposed convolutions and skip connections, restoring spatial resolution and combining contextual information with detailed features for accurate segmentation.
+A comparative study of two deep learning architectures — **U-Net** and **U2-Net** — for semantic segmentation of flood-affected areas from aerial imagery. The project uses the [FloodNet dataset](https://github.com/BinaLab/FloodNet-Supervised_v1.0) and evaluates both models on their ability to accurately identify flooded regions for disaster response applications.
 
-One of U-Net's key strengths lies in its adaptability to various input sizes, making it highly versatile for diverse applications. Its robust performance, coupled with relatively fewer parameters compared to other architectures, contributes to its efficiency in both training and inference.
+**Key Result:** U2-Net achieved **92% accuracy** vs U-Net's **86% accuracy** on the FloodNet dataset.
 
-U-Net has seen widespread adoption in medical imaging tasks, such as tumor segmentation and cell detection, where precision is paramount. Beyond medical applications, it has found utility in diverse domains, from satellite image analysis to autonomous vehicles.
+---
 
-In essence, U-Net stands as a testament to the power of architectural innovation in deep learning, addressing the intricate balance between global context and local details, and significantly advancing the field of image segmentation. Its legacy continues to influence the development of subsequent architectures, marking it as a pioneering model in the ever-evolving landscape of deep learning. 
+## Results
 
-![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/259653e3-42e5-4fdc-af03-6a435f618fad)
+| Model   | Accuracy | Architecture Highlights |
+|---------|----------|------------------------|
+| U-Net   | 86%      | Encoder-decoder with skip connections |
+| U2-Net  | **92%**  | Nested U-structure + Recurrent U-Block |
 
-# U2net
+U2-Net's nested architecture captures finer spatial details and contextual nuances — critical for precise flood boundary delineation in aerial imagery.
 
-U2-Net represents a significant evolution in deep learning architecture, specifically tailored for salient object detection. Building upon the foundation of U-Net, U2-Net introduces crucial modifications to enhance its performance in highlighting salient objects within complex visual scenes.
+---
 
-The 'Nested U-Structure' in U2-Net extends the traditional U-shaped architecture, incorporating a more extensive set of convolutional blocks for heightened feature extraction. This adaptation equips the model with a refined ability to capture intricate details, essential for precise localization of salient objects.
+## Architecture
 
-Adding a 'Recurrent U-Block' with recurrent neural network (RNN) units further augments U2-Net's capabilities. This addition allows the network to leverage temporal dependencies in the data, enhancing contextual understanding. The recurrent mechanism empowers the model to capture nuanced patterns over time, contributing to a comprehensive grasp of salient features.
+### U-Net
+- 6-level encoder-decoder with skip connections
+- 256×256 input resolution
+- Binary cross-entropy loss, Adam optimizer (lr=1e-4)
+- Trained for 100 epochs, batch size 40
 
-U2-Net's specialization in salient object detection distinguishes it from the broader applications of U-Net. These architectural refinements exemplify the iterative nature of advancements in deep learning, showcasing how tailored modifications address specific challenges, and furthering the capabilities of neural networks in the realm of computer vision. 🌐🤖
+### U2-Net
+- Nested U-structure for multi-scale feature extraction
+- Recurrent U-Block for temporal/contextual dependencies
+- Same training configuration for fair comparison
 
-![download](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/2d9e4f3a-964c-4110-9a95-243db1f69029)
+---
 
+## Dataset
 
-# Comparison
+**FloodNet Dataset** — Aerial imagery for flood detection and segmentation.
 
-In a flood image segmentation project utilizing the FloodNet dataset, U2-Net outshone U-Net with compelling results. Focusing on aerial image segmentation for flood detection, U2-Net achieved an impressive 92% accuracy, surpassing U-Net's 86%. The 'Nested U-Structure' and 'Recurrent U-Block' in U2-Net played pivotal roles in capturing intricate details and contextual nuances, contributing to its superior performance. The refined architecture of U2-Net demonstrated its effectiveness in discerning flood patterns within the provided aerial images, showcasing its suitability for such complex tasks. This comparison underscores U2-Net's advancements in image segmentation, particularly in scenarios demanding high accuracy for disaster detection, where precise delineation of flooded areas is crucial. The 92% accuracy achieved by U2-Net emphasizes its efficacy in pushing the boundaries of aerial image segmentation for impactful real-world applications. 🌊📈
+Dataset download links are available in the [`Dataset/`](./Dataset/) folder of this repository (Google Drive links).
 
-![mail google](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/20ae9813-b819-40cb-9e3f-c1e49f6c297c)
+Dataset structure expected:
+```
+flood-area-segmentation/
+├── Image/
+│   └── images/
+├── Mask/
+│   └── masks/
+└── metadata.csv
+```
 
-U2net : ![mail google](https://github.com/AniruddhMukherjee/Unet-VS-U2net/assets/97076878/65e0ed0f-3657-4fb1-8929-ef3f2ee21f54)
+---
 
+## Setup & Usage
+
+### Requirements
+
+```bash
+pip install tensorflow keras numpy pandas matplotlib opencv-python
+```
+
+**Tested with:**
+- Python 3.8+
+- TensorFlow 2.x
+- Keras 2.x
+
+### Run
+
+1. Clone the repository:
+```bash
+git clone https://github.com/AniruddhMukherjee/Unet-VS-U2net.git
+cd Unet-VS-U2net
+```
+
+2. Download the dataset using links in `Dataset/` folder and place it as shown above.
+
+3. Open and run the notebooks:
+   - `ariel-image-segmentation-Unet.ipynb` — U-Net training and evaluation
+   - `ariel-image-segmentation-U2net.ipynb` — U2-Net training and evaluation
+
+> **Note:** Notebooks were originally run on Google Colab with Google Drive. Update the `data_dir` path in the notebooks to match your local setup.
+
+---
+
+## Publication
+
+**Mukherjee, A.** — *"Improvement in Image Segmentation Using UNet and U2Net"*  
+ICT4SD 2024 | Springer Lecture Notes in Networks and Systems (LNNS)  
+🔗 [https://link.springer.com/chapter/10.1007/978-981-97-8526-1_25](https://link.springer.com/chapter/10.1007/978-981-97-8526-1_25)
+
+---
+
+## Project Structure
+
+```
+Unet-VS-U2net/
+├── ariel-image-segmentation-Unet.ipynb    # U-Net implementation
+├── ariel-image-segmentation-U2net.ipynb   # U2-Net implementation
+├── Dataset/                                # Google Drive dataset links
+└── README.md
+```
+
+---
+
+## Author
+
+**Aniruddh Mukherjee**  
+M.Sc. INFOTECH — Universität Stuttgart  
+[GitHub](https://github.com/AniruddhMukherjee) | [LinkedIn](https://linkedin.com/in/aniruddh-mukherjee)
